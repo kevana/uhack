@@ -54,16 +54,14 @@ body{
 	position:fixed;
 	bottom:0px;
 	padding-top:10px;
-	padding-left:30px;
-	padding-right:10px;
 }
-
+/*
 @media screen and (min-width: 400px){
 	.navigation-wrapper{
 		padding-left:40px;
 	}
 }
-
+*/
 .selected{
 	position:absolute;
 	margin-top:-16px;
@@ -72,7 +70,8 @@ body{
 
 .navigation-item{
 	display:inline-block;
-	width:24%;
+	text-align: center;
+	width:32%;
 	margin:auto;
 }
 
