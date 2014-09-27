@@ -1,0 +1,5 @@
+D:\Bryan Stadick\Git Repositories\uhack\Backend\DataModel\bin\Debug\DataModel.dll
+D:\Bryan Stadick\Git Repositories\uhack\Backend\DataModel\bin\Debug\DataModel.pdb
+D:\Bryan Stadick\Git Repositories\uhack\Backend\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\Bryan Stadick\Git Repositories\uhack\Backend\DataModel\obj\Debug\DataModel.dll
+D:\Bryan Stadick\Git Repositories\uhack\Backend\DataModel\obj\Debug\DataModel.pdb
