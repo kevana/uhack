@@ -35,7 +35,7 @@
 
 <div class="clear"></div>
 
-<div class="container" data-bind="foreach: feedItems">
+<div class="container" data-bind="foreach: { data: feedItems, afterAdd: showElement }">
 	<div class="icon-column" onclick="location.href='nomination.html';">
         <pre style="display:none" data-bind="text: console.log($data)"></pre>
         <div class="avatar-img">
@@ -180,7 +180,12 @@
         }];
     var viewModelGenerator = function() {
         var viewModel = this;
-        viewModel.feedItems = ko.observableArray(feedies); 
+        viewModel.feedItems = ko.observableArray(feedies);
+        viewModel.showElement = function(elem) {
+            if (elem.nodeType === 1) {
+                $(elem).hide().slideDown();
+            }
+        };
     };
     var viewModel = new viewModelGenerator();
     ko.applyBindings(viewModel);
