@@ -42,25 +42,17 @@
 
 <div class="clear"></div>
 
-<div class="container">
+<div class="container" data-bind="foreach: feedItems">
 	<div class="icon-column">
     	<p>
-        	<img src="images/col1.png" class="replace-2x" width="55" alt="img"
-            data-bind="attr: {src: 'images/col1.png'}">
-            <strong data-bind="text: 'Retina icons, of course!'"></strong><br/>
-        	<span data-bind="text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'"></span>
+        	<img class="replace-2x" width="55" alt="img"
+            data-bind="attr: {src: url}">
+            <span data-bind="text: icon"></span>
+            <strong data-bind="text: name"></strong><br/>
+        	<span data-bind="text: shortSummary"></span>
         </p>
     </div>
 	<div class="decoration"></div>
-	<div class="icon-column">
-        <p>
-            <img src="images/col1.png" class="replace-2x" width="55" alt="img"
-            data-bind="attr: {src: 'images/col1.png'}">
-            <strong data-bind="text: 'Retina icons, of course!'"></strong><br/>
-            <span data-bind="text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'"></span>
-        </p>
-    </div>
-    <div class="decoration"></div>
 </div>
 
 <script type='text/javascript' src='scripts/knockout-3.2.0.js'></script>
@@ -69,19 +61,22 @@
         var viewModel = this;
         viewModel.nom =  "Nominate";
         viewModel.prof =  "Profile";
-        viewModel.feed = ko.observableArray(); 
+        viewModel.feedItems = ko.observableArray(); 
     };
     var viewModel = new viewModelGenerator();
     ko.applyBindings(viewModel);
 
+    var sampleFeedItem = {
+            url: 'images/col1.png',
+            icon: 'I',
+            name: 'Joe Shmo',
+            shortSummary: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'
+        };
+    viewModel.feedItems.push(sampleFeedItem);
+    viewModel.feedItems.push(sampleFeedItem);
     /*
     (function() {
         // Hack to simulate data
-        var sampleFeedItem = {
-            url: '',
-            name: 'Joe Shmo',
-            shortSummary: 'Lorem Ipsum dolor...'
-        };
         window.setInterval(function() {
             viewModel.feed.push(sampleFeedItem);
         }, 10000);
