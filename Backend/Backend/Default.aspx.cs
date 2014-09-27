@@ -19,6 +19,7 @@ namespace Backend
     {
 
         private static string _conStr = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static string _apiStr = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["AcclaimApiConnection"].ConnectionString;
         Connector connector = new Connector();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace Backend
         }
 
         /// <summary>
-        /// 
+        /// Gets the feed of the latest nominations.
         /// </summary>
         /// <param name="datetime"></param>
         /// <returns></returns>
@@ -57,8 +58,7 @@ namespace Backend
                             Nomination nom = new Nomination();
                             nom.nomination_id = rdrNom.GetInt32("nomination_id");
                             nom.organization_id = rdrNom.GetString("organization_id");
-                            nom.nomination_description_short = rdrNom.GetString("nomination_description_short");
-                            nom.nomination_description_long = rdrNom.GetString("nomination_description_long");
+                            nom.nomination_description = rdrNom.GetString("nomination_description");
                             nom.vote_count = rdrNom.GetInt32("vote_count");
                             nom.req_vote_count = rdrNom.GetInt32("req_vote_count");
                             nom.timestamp = rdrNom.GetString("timestamp");
@@ -114,14 +114,12 @@ namespace Backend
             }
             catch (Exception ex)
             {
-                // Handle the error
+                return "false: " + ex.Message;
             }
-
-            return "false";
         }
     
         /// <summary>
-        /// 
+        /// Gets the back a recognition nomination page.
         /// </summary>
         /// <param name="nomination_id"></param>
         /// <returns></returns>
@@ -149,8 +147,7 @@ namespace Backend
                         // get nomination
                         nom.nomination_id = rdrNom.GetInt32("nomination_id");
                         nom.organization_id = rdrNom.GetString("organization_id");
-                        nom.nomination_description_short = rdrNom.GetString("nomination_description_short");
-                        nom.nomination_description_long = rdrNom.GetString("nomination_description_long");
+                        nom.nomination_description = rdrNom.GetString("nomination_description");
                         nom.vote_count = rdrNom.GetInt32("vote_count");
                         nom.req_vote_count = rdrNom.GetInt32("req_vote_count");
                         nom.timestamp = rdrNom.GetString("timestamp");
@@ -251,17 +248,28 @@ namespace Backend
             }
             catch (Exception ex)
             {
-                // Handle the error
+                return "false: " + ex.Message;
             }
-
-            return "false";
         }
 
+        /// <summary>
+        /// Creates a new nomination and subsequently a new user.
+        /// </summary>
+        /// <param name="user_first_name"></param>
+        /// <param name="user_last_name"></param>
+        /// <param name="email"></param>
+        /// <param name="badge_id"></param>
+        /// <param name="badge_name"></param>
+        /// <param name="badge_description"></param>
+        /// <param name="badge_url"></param>
+        /// <param name="nomination_description"></param>
+        /// <param name="req_vote_count"></param>
+        /// <param name="organization_id"></param>
+        /// <returns></returns>
         [WebMethod]
-        public static string CreateNomination(string user_first_name, string user_last_name,
+        public static string CreateNomination(string user_first_name, string user_last_name, string email,
             string badge_id, string badge_name, string badge_description, string badge_url,
-            string nomination_description_short, string nomination_description_long,
-            int req_vote_count, string organization_id)
+            string nomination_description, int req_vote_count, string organization_id)
         {
             Dictionary<string, object> paramUsr = new Dictionary<string, object>();
             Dictionary<string, object> paramNom = new Dictionary<string, object>();
@@ -276,7 +284,7 @@ namespace Backend
                     paramUsr.Add("user_first_name", user_first_name);
                     paramUsr.Add("user_last_name", user_last_name);
                     paramUsr.Add("user_name", user_first_name + " " + user_last_name);
-                    paramUsr.Add("email", user_first_name + "@kudos.com");
+                    paramUsr.Add("email", email);
                     paramUsr.Add("user_pic_url", "http://www.finmap-fp7.eu/no_pic.png");
 
                     if (paramUsr.Count > 0)
@@ -292,8 +300,7 @@ namespace Backend
                     paramNom.Add("badge_name", badge_name);
                     paramNom.Add("badge_description", badge_description);
                     paramNom.Add("badge_url", badge_url);
-                    paramNom.Add("nomination_description_short", nomination_description_short);
-                    paramNom.Add("nomination_description_long", nomination_description_long);
+                    paramNom.Add("nomination_description", nomination_description);
                     paramNom.Add("vote_count", 0);
                     paramNom.Add("req_vote_count", req_vote_count);
                     paramNom.Add("organization_id", organization_id);
@@ -311,12 +318,17 @@ namespace Backend
             }
             catch (Exception ex)
             {
- 
+                return "false: " + ex.Message;
             }
-
-            return "false";
         }
 
+        /// <summary>
+        /// Creates a new nomination rating/review entry.
+        /// </summary>
+        /// <param name="nomination_id"></param>
+        /// <param name="user_id"></param>
+        /// <param name="review"></param>
+        /// <returns></returns>
         [WebMethod]
         public static string CreateRating(int nomination_id, int user_id, string review)
         {
@@ -370,20 +382,42 @@ namespace Backend
             }
             catch (Exception ex)
             {
-
+                return "false: " + ex.Message;
             }
-
-            return "false";
-
         }
 
-
+        /// <summary>
+        /// Gets the badges issued by the organization.
+        /// </summary>
+        /// <param name="organization_id"></param>
+        /// <returns></returns>
         [WebMethod]
         public static string GetBadges(string organization_id)
         {
-            System.Security.SecureString password = new System.Security.SecureString();
-            AcclaimApi api = new AcclaimApi("Rm4u-5qRk8X3qHrk4v61", password, "33b85363-1ddb-424f-ba2e-4c8c402867e4");
-            return api.BadgeGetIssueRequest().Result;
+            try
+            {
+                return getApiLogin().BadgeGetIssueRequestJson();
+            }
+            catch (Exception ex)
+            {
+                return "false: " + ex.Message;
+            }
+        }
+
+        /// <summary>
+        /// Gets the username, password, and organization for the API login.
+        /// </summary>
+        /// <returns></returns>
+        private static AcclaimApi getApiLogin()
+        {
+            string[] parts = _apiStr.Split(new char[]{';'});
+            if (parts.Length != 3)
+                throw new Exception("Invalid login string.");
+            string username = parts[0];
+            string password = parts[1];
+            string organization = parts[2];
+
+            return new AcclaimApi(username, password, organization);
         }
 
     }

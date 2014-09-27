@@ -14,10 +14,10 @@ namespace Backend
 {
     public class AcclaimApi
     {
-        private string _userName;
-        private System.Security.SecureString _password;
+        private string _username;
+        private string _password;
         private string _orgId;
-        private static string _baseUrl = "https://sandbox.youracclaim.com/api/v1/users/self";
+        private static string _baseUrl = "https://sandbox.youracclaim.com/api/v1";
 
         /// <summary>
         /// 
@@ -30,12 +30,12 @@ namespace Backend
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="userName"></param>
+        /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="orgId"></param>
-        public AcclaimApi(string userName, System.Security.SecureString password, string orgId)
+        public AcclaimApi(string username, string password, string orgId)
         {
-            _userName = userName;
+            _username = username;
             _password = password;
             _orgId = orgId;
         }
@@ -45,10 +45,21 @@ namespace Backend
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<object> BadgeIssueRequest(BadgeIssue data)
+        public BadgeDataResponse BadgeIssueRequest(BadgeIssue data)
         {
             string url = _baseUrl + String.Format("/organizations/{0}/badges", _orgId);
-            return await RestProxy.ProxyPost<BadgeDataResponse, BadgeIssue, BadgeErrorResponse>(_userName, _password, "", data);
+            return RestProxy.ProxyPost<BadgeDataResponse, BadgeIssue>(_username, _password, "", data);
+        }
+
+        /// <summary>
+        /// Issue Badge to a user
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public string BadgeIssueRequestJson(BadgeIssue data)
+        {
+            string url = _baseUrl + String.Format("/organizations/{0}/badges", _orgId);
+            return RestProxy.ProxyPost<BadgeIssue>(_username, _password, "", data);
         }
 
         /// <summary>
@@ -56,10 +67,21 @@ namespace Backend
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<object> BadgeIssueEvidenceRequest(BadgeEvidence data)
+        public BadgeDataResponse BadgeIssueEvidenceRequest(BadgeEvidence data)
         {
             string url = _baseUrl + String.Format("/organizations/{0}/badges", _orgId);
-            return await RestProxy.ProxyPost<BadgeDataResponse, BadgeEvidence, BadgeErrorResponse>(_userName, _password, "", data);
+            return RestProxy.ProxyPost<BadgeDataResponse, BadgeEvidence>(_username, _password, "", data);
+        }
+
+        /// <summary>
+        /// Issue Badge with evidence to user
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public string BadgeIssueEvidenceRequestJson(BadgeEvidence data)
+        {
+            string url = _baseUrl + String.Format("/organizations/{0}/badges", _orgId);
+            return RestProxy.ProxyPost<BadgeEvidence>(_username, _password, "", data);
         }
 
         /// <summary>
@@ -67,10 +89,21 @@ namespace Backend
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<object> BadgeIssueBatchRequest(BadgeBatch data)
+        public BadgeDataResponse BadgeIssueBatchRequest(BadgeBatch data)
         {
             string url = _baseUrl + String.Format("/organizations/{0}/badges/batch", _orgId);
-            return await RestProxy.ProxyPost<BadgeDataResponse, BadgeBatch, BadgeErrorResponse>(_userName, _password, url, data);
+            return RestProxy.ProxyPost<BadgeDataResponse, BadgeBatch>(_username, _password, url, data);
+        }
+
+        /// <summary>
+        /// Issue a batch of Badges
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public string BadgeIssueBatchRequestJson(BadgeBatch data)
+        {
+            string url = _baseUrl + String.Format("/organizations/{0}/badges/batch", _orgId);
+            return RestProxy.ProxyPost<BadgeBatch>(_username, _password, url, data);
         }
 
         public enum FilterEnum { query, state, user_id, issuer_id, badge_templates };
@@ -84,7 +117,26 @@ namespace Backend
         /// <param name="sorts">Dictionary of sort types and values. Set null for no sorts.</param>
         /// <param name="pages">The page of results to return.</param>
         /// <returns></returns>
-        public async Task<string> BadgeGetIssueRequest(Dictionary<FilterEnum, string> filters = null, Dictionary<SortEnum, string> sorts = null, int pages = -1)
+        public BadgeDataResponse BadgeGetIssueRequest(Dictionary<FilterEnum, string> filters = null, Dictionary<SortEnum, string> sorts = null, int pages = -1)
+        {
+            string url = parseFilterSort(filters, sorts, pages);
+            return RestProxy.ProxyGet<BadgeDataResponse>(_username, _password, url);
+        }
+
+        /// <summary>
+        /// Get filtered and sorted issued badges results
+        /// </summary>
+        /// <param name="filters">Dictionary of filter types and values. Set null for no filters.</param>
+        /// <param name="sorts">Dictionary of sort types and values. Set null for no sorts.</param>
+        /// <param name="pages">The page of results to return.</param>
+        /// <returns></returns>
+        public string BadgeGetIssueRequestJson(Dictionary<FilterEnum, string> filters = null, Dictionary<SortEnum, string> sorts = null, int pages = -1)
+        {
+            string url = parseFilterSort(filters, sorts, pages);
+            return RestProxy.ProxyGet(_username, _password, url);
+        }
+
+        private string parseFilterSort(Dictionary<FilterEnum, string> filters = null, Dictionary<SortEnum, string> sorts = null, int pages = -1)
         {
             bool filterPresent = false;
             string filter = "";
@@ -92,9 +144,9 @@ namespace Backend
             {
                 filterPresent = true;
                 filter = "filter=";
-                foreach(KeyValuePair<FilterEnum, string> pair in filters)
+                foreach (KeyValuePair<FilterEnum, string> pair in filters)
                 {
-                    if(pair.Key != FilterEnum.badge_templates)
+                    if (pair.Key != FilterEnum.badge_templates)
                         filter += String.Format("{0}::{1}|", FilterEnumToString(pair.Key), pair.Value);
                     else
                         filter += String.Format("{0}[{1}]|", FilterEnumToString(pair.Key), pair.Value);
@@ -106,7 +158,7 @@ namespace Backend
             if (sorts != null && sorts.Count > 0)
             {
                 sort = "sort=";
-                if(filterPresent)
+                if (filterPresent)
                     sort = "&" + sort;
 
                 filterPresent = true;
@@ -127,11 +179,13 @@ namespace Backend
                 page = "page=";
                 if (filterPresent)
                     page = "&" + page;
+                filterPresent = true;
                 page += pages.ToString();
             }
-
-            string url = _baseUrl + String.Format("/organizations/{0}/badges?{1}{2}{3}", _orgId, filter, sort, page);
-            return await RestProxy.ProxyGet(_userName, _password, url);
+            string urlAdd = "/organizations/{0}/badges{1}{2}{3}";
+            if (filterPresent)
+                urlAdd = "/organizations/{0}/badges?{1}{2}{3}";
+            return _baseUrl + String.Format(urlAdd, _orgId, filter, sort, page);
         }
 
         public static string FilterEnumToString(FilterEnum value)
@@ -185,346 +239,222 @@ namespace Backend
         /// <param name="badgeId">The Badge to be replaced</param>
         /// <param name="data">The replacing Badge</param>
         /// <returns></returns>
-        public async Task<object> BadgeReplaceRequest(string badgeId, BadgeReplace data)
+        public BadgeDataResponse BadgeReplaceRequest(string badgeId, BadgeReplace data)
         {
             string url = _baseUrl + String.Format("/organizations/{0}/badges/{1}", _orgId, badgeId);
-            return await RestProxy.ProxyPost<BadgeDataResponse, BadgeReplace, BadgeErrorResponse>(_userName, _password, "", data);
+            return RestProxy.ProxyPost<BadgeDataResponse, BadgeReplace>(_username, _password, "", data);
         }
 
-        public async Task<object> BadgeRevokeRequest(string badgeId, BadgeRevoke data)
+        /// <summary>
+        /// Revokes the URL of the Badge
+        /// </summary>
+        /// <param name="badgeId"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public BadgeDataResponse BadgeRevokeRequest(string badgeId, BadgeRevoke data)
         {
             string url = _baseUrl + String.Format("/organizations/{0}/badges/{1}", _orgId, badgeId);
-            return await RestProxy.ProxyPut<BadgeDataResponse, BadgeRevoke, BadgeErrorResponse>(_userName, _password, "", data);
+            return RestProxy.ProxyPut<BadgeDataResponse, BadgeRevoke>(_username, _password, "", data);
         }
     
     }
 
     public class RestProxy
     {
-        public static async Task<T1> ProxyPost<T1, T2>(string userName, System.Security.SecureString password, string url, T2 postData)
+        public static string ProxyPost<T1>(string username, string password, string url, T1 postData)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T2));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PostAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        MemoryStream stream = new MemoryStream(data);
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
 
-                        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                        T1 result = (T1)serializer.ReadObject(stream);
-                        return result;
-                    }
+                if (postData == null)
+                    throw new ArgumentNullException();
+
+                Stream dataStream = request.GetRequestStream();
+                Serialize(dataStream, postData);
+                dataStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                byte[] buff = new byte[512];
+                StringBuilder str = new StringBuilder();
+                while (stream.Read(buff, 0, 512) > 0)
+                {
+                    str.Append(System.Text.Encoding.UTF8.GetString(buff));
                 }
+
+                return str.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(T1);
+                throw ex;
             }
         }
 
-        public static async Task<object> ProxyPost<T1, T2, T3>(string userName, System.Security.SecureString password, string url, T2 postData)
+        public static T1 ProxyPost<T1, T2>(string username, string password, string url, T2 postData)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T2));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PostAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        MemoryStream stream = new MemoryStream(data);
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
 
-                        if (!response.IsSuccessStatusCode) // error
-                        {
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T3));
-                            T3 result = (T3)serializer.ReadObject(stream);
-                            return result;
-                        }
-                        else
-                        {
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                            T1 result = (T1)serializer.ReadObject(stream);
-                            return result;
-                        }
-                    }
-                }
+                if (postData == null)
+                    throw new ArgumentNullException();
+
+                Stream dataStream = request.GetRequestStream();
+                Serialize(dataStream, postData);
+                dataStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
+                T1 result = (T1)serializer.ReadObject(stream);
+
+                return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(T1);
+                throw ex;
             }
         }
 
-        public static async Task<string> ProxyPost<T1>(string userName, System.Security.SecureString password, string url, T1 postData)
+        public static string ProxyGet(string username, string password, string url)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T1));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PostAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "GET";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
 
-                        return System.Text.Encoding.UTF8.GetString(data);
-                    }
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                byte[] buff = new byte[512];
+                StringBuilder str = new StringBuilder();
+                while (stream.Read(buff, 0, 512) > 0)
+                {
+                    str.Append(System.Text.Encoding.UTF8.GetString(buff));
                 }
+
+                return str.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return "";
+                throw ex;
             }
         }
 
-        public static async Task<T1> ProxyGet<T1>(string userName, System.Security.SecureString password, string url)
+        public static T1 ProxyGet<T1>(string username, string password, string url)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        response = await client.GetAsync(url);
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        MemoryStream stream = new MemoryStream(data);
-                        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                        T1 result = (T1)serializer.ReadObject(stream);
-                        return result;
-                    }
-                }
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "GET";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
+                T1 result = (T1)serializer.ReadObject(stream);
+
+                return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(T1);
+                throw ex;
             }
         }
 
-        public static async Task<object> ProxyGet<T1, T2>(string userName, System.Security.SecureString password, string url)
+        public static string ProxyPut<T1>(string username, string password, string url, T1 postData)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "PUT";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
+
+                if (postData == null)
+                    throw new ArgumentNullException();
+
+                Stream dataStream = request.GetRequestStream();
+                Serialize(dataStream, postData);
+                dataStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                byte[] buff = new byte[512];
+                StringBuilder str = new StringBuilder();
+                while (stream.Read(buff, 0, 512) > 0)
                 {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        response = await client.GetAsync(url);
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        if (!response.IsSuccessStatusCode) // error
-                        {
-                            MemoryStream stream = new MemoryStream(data);
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T2));
-                            T2 result = (T2)serializer.ReadObject(stream);
-                            return result;
-                        }
-                        else
-                        {
-                            MemoryStream stream = new MemoryStream(data);
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                            T1 result = (T1)serializer.ReadObject(stream);
-                            return result;
-                        }
-                    }
+                    str.Append(System.Text.Encoding.UTF8.GetString(buff));
                 }
+
+                return str.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(T1);
+                throw ex;
             }
         }
 
-        public static async Task<string> ProxyGet(string userName, System.Security.SecureString password, string url)
+        public static T1 ProxyPut<T1, T2>(string username, string password, string url, T2 postData)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
             try
             {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        response = await client.GetAsync(url);
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        return System.Text.Encoding.UTF8.GetString(data);
-                    }
-                }
+                WebRequest request = WebRequest.Create(url);
+                request.Method = "PUT";
+                request.ContentType = "application/json";
+                String encoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+                request.Headers.Add("Authorization", "Basic " + encoded);
+                request.PreAuthenticate = true;
+
+                if (postData == null)
+                    throw new ArgumentNullException();
+
+                Stream dataStream = request.GetRequestStream();
+                Serialize(dataStream, postData);
+                dataStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
+                T1 result = (T1)serializer.ReadObject(stream);
+
+                return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return "";
+                throw ex;
             }
         }
 
-        public static async Task<T1> ProxyPut<T1, T2>(string userName, System.Security.SecureString password, string url, T2 postData)
+        private static void Serialize(Stream output, object input)
         {
-            HttpResponseMessage response = null;
-            byte[] data;
-            try
-            {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T2));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PutAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        MemoryStream stream = new MemoryStream(data);
-
-                        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                        T1 result = (T1)serializer.ReadObject(stream);
-                        return result;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return default(T1);
-            }
-        }
-
-        public static async Task<string> ProxyPut<T1>(string userName, System.Security.SecureString password, string url, T1 postData)
-        {
-            HttpResponseMessage response = null;
-            byte[] data;
-            try
-            {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T1));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PutAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
-
-                        return System.Text.Encoding.UTF8.GetString(data);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return "";
-            }
-        }
-
-        public static async Task<object> ProxyPut<T1, T2, T3>(string userName, System.Security.SecureString password, string url, T2 postData)
-        {
-            HttpResponseMessage response = null;
-            byte[] data;
-            try
-            {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        using (Stream ms = new MemoryStream())
-                        {
-                            DataContractJsonSerializer requestSerializer = new DataContractJsonSerializer(typeof(T2));
-                            requestSerializer.WriteObject(ms, postData);
-                            ms.Position = 0;
-                            HttpContent content = new StreamContent(ms);
-                            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                            response = await client.PutAsync(url, content);
-                        }
-                        data = await response.Content.ReadAsByteArrayAsync();
-                        MemoryStream stream = new MemoryStream(data);
-                        if (!response.IsSuccessStatusCode) // error
-                        {
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T3));
-                            T3 result = (T3)serializer.ReadObject(stream);
-                            return result;
-                        }
-                        else
-                        {
-                            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T1));
-                            T1 result = (T1)serializer.ReadObject(stream);
-                            return result;
-                        }
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return default(T1);
-            }
-        }
-
-        public static async Task<byte[]> ProxyStream(string userName, System.Security.SecureString password, string Url)
-        {
-            try
-            {
-                using (HttpClientHandler handler = new HttpClientHandler())
-                {
-                    handler.Credentials = new System.Net.NetworkCredential(userName, password);
-                    using (HttpClient client = new HttpClient(handler))
-                    {
-                        byte[] data = await client.GetByteArrayAsync(Url);
-                        return data;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            var ser = new DataContractSerializer(input.GetType());
+            ser.WriteObject(output, input);
         }
     }
 }

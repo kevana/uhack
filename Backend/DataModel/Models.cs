@@ -20,9 +20,7 @@ namespace DataModel
         
         public string organization_id { get; set; }
 
-        public string nomination_description_short { get; set; }
-
-        public string nomination_description_long { get; set; }
+        public string nomination_description { get; set; }
 
         public Rating[] ratings { get; set; } // Not in table
 
