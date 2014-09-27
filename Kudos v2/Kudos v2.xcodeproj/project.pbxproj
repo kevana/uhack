@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F7D05D319D6A34E00A5C45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05D219D6A34E00A5C45D /* Foundation.framework */; };
+		6F7D05D519D6A34E00A5C45D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05D419D6A34E00A5C45D /* CoreGraphics.framework */; };
+		6F7D05D719D6A34E00A5C45D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05D619D6A34E00A5C45D /* UIKit.framework */; };
+		6F7D05DD19D6A34E00A5C45D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F7D05DB19D6A34E00A5C45D /* InfoPlist.strings */; };
+		6F7D05DF19D6A34E00A5C45D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D05DE19D6A34E00A5C45D /* main.m */; };
+		6F7D05E319D6A34E00A5C45D /* FMGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D05E219D6A34E00A5C45D /* FMGAppDelegate.m */; };
+		6F7D05E619D6A34E00A5C45D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7D05E419D6A34E00A5C45D /* Main.storyboard */; };
+		6F7D05E919D6A34E00A5C45D /* FMGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D05E819D6A34E00A5C45D /* FMGViewController.m */; };
+		6F7D05EB19D6A34E00A5C45D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7D05EA19D6A34E00A5C45D /* Images.xcassets */; };
+		6F7D05F219D6A34E00A5C45D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05F119D6A34E00A5C45D /* XCTest.framework */; };
+		6F7D05F319D6A34E00A5C45D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05D219D6A34E00A5C45D /* Foundation.framework */; };
+		6F7D05F419D6A34E00A5C45D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D05D619D6A34E00A5C45D /* UIKit.framework */; };
+		6F7D05FC19D6A34E00A5C45D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F7D05FA19D6A34E00A5C45D /* InfoPlist.strings */; };
+		6F7D05FE19D6A34E00A5C45D /* Kudos_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D05FD19D6A34E00A5C45D /* Kudos_v2Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F7D05F519D6A34E00A5C45D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F7D05C719D6A34E00A5C45D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F7D05CE19D6A34E00A5C45D;
+			remoteInfo = "Kudos v2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6F7D05CF19D6A34E00A5C45D /* Kudos v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kudos v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7D05D219D6A34E00A5C45D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6F7D05D419D6A34E00A5C45D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6F7D05D619D6A34E00A5C45D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6F7D05DA19D6A34E00A5C45D /* Kudos v2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kudos v2-Info.plist"; sourceTree = "<group>"; };
+		6F7D05DC19D6A34E00A5C45D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F7D05DE19D6A34E00A5C45D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F7D05E019D6A34E00A5C45D /* Kudos v2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kudos v2-Prefix.pch"; sourceTree = "<group>"; };
+		6F7D05E119D6A34E00A5C45D /* FMGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMGAppDelegate.h; sourceTree = "<group>"; };
+		6F7D05E219D6A34E00A5C45D /* FMGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMGAppDelegate.m; sourceTree = "<group>"; };
+		6F7D05E519D6A34E00A5C45D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6F7D05E719D6A34E00A5C45D /* FMGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMGViewController.h; sourceTree = "<group>"; };
+		6F7D05E819D6A34E00A5C45D /* FMGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMGViewController.m; sourceTree = "<group>"; };
+		6F7D05EA19D6A34E00A5C45D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6F7D05F019D6A34E00A5C45D /* Kudos v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kudos v2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7D05F119D6A34E00A5C45D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6F7D05F919D6A34E00A5C45D /* Kudos v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kudos v2Tests-Info.plist"; sourceTree = "<group>"; };
+		6F7D05FB19D6A34E00A5C45D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F7D05FD19D6A34E00A5C45D /* Kudos_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kudos_v2Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F7D05CC19D6A34E00A5C45D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05D519D6A34E00A5C45D /* CoreGraphics.framework in Frameworks */,
+				6F7D05D719D6A34E00A5C45D /* UIKit.framework in Frameworks */,
+				6F7D05D319D6A34E00A5C45D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F7D05ED19D6A34E00A5C45D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05F219D6A34E00A5C45D /* XCTest.framework in Frameworks */,
+				6F7D05F419D6A34E00A5C45D /* UIKit.framework in Frameworks */,
+				6F7D05F319D6A34E00A5C45D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F7D05C619D6A34E00A5C45D = {
+			isa = PBXGroup;
+			children = (
+				6F7D05D819D6A34E00A5C45D /* Kudos v2 */,
+				6F7D05F719D6A34E00A5C45D /* Kudos v2Tests */,
+				6F7D05D119D6A34E00A5C45D /* Frameworks */,
+				6F7D05D019D6A34E00A5C45D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F7D05D019D6A34E00A5C45D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05CF19D6A34E00A5C45D /* Kudos v2.app */,
+				6F7D05F019D6A34E00A5C45D /* Kudos v2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F7D05D119D6A34E00A5C45D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05D219D6A34E00A5C45D /* Foundation.framework */,
+				6F7D05D419D6A34E00A5C45D /* CoreGraphics.framework */,
+				6F7D05D619D6A34E00A5C45D /* UIKit.framework */,
+				6F7D05F119D6A34E00A5C45D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F7D05D819D6A34E00A5C45D /* Kudos v2 */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05E119D6A34E00A5C45D /* FMGAppDelegate.h */,
+				6F7D05E219D6A34E00A5C45D /* FMGAppDelegate.m */,
+				6F7D05E419D6A34E00A5C45D /* Main.storyboard */,
+				6F7D05E719D6A34E00A5C45D /* FMGViewController.h */,
+				6F7D05E819D6A34E00A5C45D /* FMGViewController.m */,
+				6F7D05EA19D6A34E00A5C45D /* Images.xcassets */,
+				6F7D05D919D6A34E00A5C45D /* Supporting Files */,
+			);
+			path = "Kudos v2";
+			sourceTree = "<group>";
+		};
+		6F7D05D919D6A34E00A5C45D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05DA19D6A34E00A5C45D /* Kudos v2-Info.plist */,
+				6F7D05DB19D6A34E00A5C45D /* InfoPlist.strings */,
+				6F7D05DE19D6A34E00A5C45D /* main.m */,
+				6F7D05E019D6A34E00A5C45D /* Kudos v2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F7D05F719D6A34E00A5C45D /* Kudos v2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05FD19D6A34E00A5C45D /* Kudos_v2Tests.m */,
+				6F7D05F819D6A34E00A5C45D /* Supporting Files */,
+			);
+			path = "Kudos v2Tests";
+			sourceTree = "<group>";
+		};
+		6F7D05F819D6A34E00A5C45D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F7D05F919D6A34E00A5C45D /* Kudos v2Tests-Info.plist */,
+				6F7D05FA19D6A34E00A5C45D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F7D05CE19D6A34E00A5C45D /* Kudos v2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F7D060119D6A34E00A5C45D /* Build configuration list for PBXNativeTarget "Kudos v2" */;
+			buildPhases = (
+				6F7D05CB19D6A34E00A5C45D /* Sources */,
+				6F7D05CC19D6A34E00A5C45D /* Frameworks */,
+				6F7D05CD19D6A34E00A5C45D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kudos v2";
+			productName = "Kudos v2";
+			productReference = 6F7D05CF19D6A34E00A5C45D /* Kudos v2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6F7D05EF19D6A34E00A5C45D /* Kudos v2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F7D060419D6A34E00A5C45D /* Build configuration list for PBXNativeTarget "Kudos v2Tests" */;
+			buildPhases = (
+				6F7D05EC19D6A34E00A5C45D /* Sources */,
+				6F7D05ED19D6A34E00A5C45D /* Frameworks */,
+				6F7D05EE19D6A34E00A5C45D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F7D05F619D6A34E00A5C45D /* PBXTargetDependency */,
+			);
+			name = "Kudos v2Tests";
+			productName = "Kudos v2Tests";
+			productReference = 6F7D05F019D6A34E00A5C45D /* Kudos v2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F7D05C719D6A34E00A5C45D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FMG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Fighting Mongooses";
+				TargetAttributes = {
+					6F7D05EF19D6A34E00A5C45D = {
+						TestTargetID = 6F7D05CE19D6A34E00A5C45D;
+					};
+				};
+			};
+			buildConfigurationList = 6F7D05CA19D6A34E00A5C45D /* Build configuration list for PBXProject "Kudos v2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F7D05C619D6A34E00A5C45D;
+			productRefGroup = 6F7D05D019D6A34E00A5C45D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F7D05CE19D6A34E00A5C45D /* Kudos v2 */,
+				6F7D05EF19D6A34E00A5C45D /* Kudos v2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F7D05CD19D6A34E00A5C45D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05EB19D6A34E00A5C45D /* Images.xcassets in Resources */,
+				6F7D05DD19D6A34E00A5C45D /* InfoPlist.strings in Resources */,
+				6F7D05E619D6A34E00A5C45D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F7D05EE19D6A34E00A5C45D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05FC19D6A34E00A5C45D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F7D05CB19D6A34E00A5C45D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05DF19D6A34E00A5C45D /* main.m in Sources */,
+				6F7D05E319D6A34E00A5C45D /* FMGAppDelegate.m in Sources */,
+				6F7D05E919D6A34E00A5C45D /* FMGViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F7D05EC19D6A34E00A5C45D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7D05FE19D6A34E00A5C45D /* Kudos_v2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6F7D05F619D6A34E00A5C45D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F7D05CE19D6A34E00A5C45D /* Kudos v2 */;
+			targetProxy = 6F7D05F519D6A34E00A5C45D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6F7D05DB19D6A34E00A5C45D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F7D05DC19D6A34E00A5C45D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6F7D05E419D6A34E00A5C45D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F7D05E519D6A34E00A5C45D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6F7D05FA19D6A34E00A5C45D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F7D05FB19D6A34E00A5C45D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F7D05FF19D6A34E00A5C45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6F7D060019D6A34E00A5C45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F7D060219D6A34E00A5C45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kudos v2/Kudos v2-Prefix.pch";
+				INFOPLIST_FILE = "Kudos v2/Kudos v2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6F7D060319D6A34E00A5C45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kudos v2/Kudos v2-Prefix.pch";
+				INFOPLIST_FILE = "Kudos v2/Kudos v2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6F7D060519D6A34E00A5C45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kudos v2.app/Kudos v2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kudos v2/Kudos v2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Kudos v2Tests/Kudos v2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6F7D060619D6A34E00A5C45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kudos v2.app/Kudos v2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kudos v2/Kudos v2-Prefix.pch";
+				INFOPLIST_FILE = "Kudos v2Tests/Kudos v2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F7D05CA19D6A34E00A5C45D /* Build configuration list for PBXProject "Kudos v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F7D05FF19D6A34E00A5C45D /* Debug */,
+				6F7D060019D6A34E00A5C45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F7D060119D6A34E00A5C45D /* Build configuration list for PBXNativeTarget "Kudos v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F7D060219D6A34E00A5C45D /* Debug */,
+				6F7D060319D6A34E00A5C45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6F7D060419D6A34E00A5C45D /* Build configuration list for PBXNativeTarget "Kudos v2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F7D060519D6A34E00A5C45D /* Debug */,
+				6F7D060619D6A34E00A5C45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F7D05C719D6A34E00A5C45D /* Project object */;
+}
