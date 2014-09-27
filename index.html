@@ -54,7 +54,7 @@
     </div>
 	<div class="decoration"></div>
 </div>
-
+<script type='text/javascript' src='scripts/jquery-2.1.1.min.js'></script>
 <script type='text/javascript' src='scripts/knockout-3.2.0.js'></script>
 <script>
     var viewModelGenerator = function() {
@@ -74,14 +74,20 @@
         };
     viewModel.feedItems.push(sampleFeedItem);
     viewModel.feedItems.push(sampleFeedItem);
-    /*
     (function() {
         // Hack to simulate data
         window.setInterval(function() {
-            viewModel.feed.push(sampleFeedItem);
+            $.ajax('http://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    data: {
+                        timestamp: '0000000000'
+                    }
+                }).then(function(data) {
+                  // for item in data,
+                    //viewModel.feedItems.push(sampleFeedItem);
+                });
         }, 10000);
     })();
-    */
 </script>
 
 <div class="navigation">
