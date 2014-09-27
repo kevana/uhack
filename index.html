@@ -42,33 +42,52 @@
 
 <div class="clear"></div>
 
-
-<!-- Image Slider Controls -->
-<a href="#" class="next-but-swipe"><img width="30" src="images/slider/next.png" alt="img"></a>
-<a href="#" class="prev-but-swipe"><img width="30" src="images/slider/prev.png" alt="img"></a>  
-
 <div class="container">
 	<div class="icon-column">
     	<p>
-        	<img src="images/col1.png" class="replace-2x" width="55" alt="img">
-            <strong>Retina icons, of course!</strong><br/>
-        	Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text.
+        	<img src="images/col1.png" class="replace-2x" width="55" alt="img"
+            data-bind="attr: {src: 'images/col1.png'}">
+            <strong data-bind="text: 'Retina icons, of course!'"></strong><br/>
+        	<span data-bind="text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'"></span>
         </p>
     </div>
 	<div class="decoration"></div>
 	<div class="icon-column">
-    	<p>
-        	<img src="images/col2.png" class="replace-2x" width="55" alt="img">
-            <strong>Round interesting stuff!</strong><br/>
-        	Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text.
+        <p>
+            <img src="images/col1.png" class="replace-2x" width="55" alt="img"
+            data-bind="attr: {src: 'images/col1.png'}">
+            <strong data-bind="text: 'Retina icons, of course!'"></strong><br/>
+            <span data-bind="text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'"></span>
         </p>
     </div>
     <div class="decoration"></div>
 </div>
 
-<p class="copyright">Copyright 2012. All rights reserved!</p>
+<script type='text/javascript' src='js/knockout-3.2.0.js'></script>
+<script>
+    var viewModelGenerator = function() {
+        var viewModel = this;
+        viewModel.nom =  "Nominate";
+        viewModel.prof =  "Profile";
+        viewModel.feed = ko.observableArray(); 
+    };
+    var viewModel = new viewModelGenerator();
+    ko.applyBindings(viewModel);
+
+    /*
+    (function() {
+        // Hack to simulate data
+        var sampleFeedItem = {
+            url: '',
+            name: 'Joe Shmo',
+            shortSummary: 'Lorem Ipsum dolor...'
+        };
+        window.setInterval(function() {
+            viewModel.feed.push(sampleFeedItem);
+        }, 10000);
+    })();
+    */
+</script>
 
 <div class="navigation">
 	<div class="navigation-wrapper">
