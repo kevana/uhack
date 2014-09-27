@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<link rel="apple-touch-icon" sizes="114x114" href="images/splash/splash-icon.png"> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+<title>Kudos Feed</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<link href="styles/buttons.css" rel="stylesheet" type="text/css">
+<link href="styles/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" />
+<link href="styles/slider.css" rel="stylesheet" type="text/css">
+<link href="styles/photoswipe.css" rel="stylesheet" type="text/css">
+
+<script src="scripts/jquery.js"></script>
+<script src="scripts/contact.js"></script>
+<script src="scripts/swipe.js"></script>
+<script src="scripts/klass.min.js"></script>
+<script src="scripts/photoswipe.js"></script>
+<script src="scripts/retina.js"></script>
+<script src="scripts/custom.js"></script>
+
+</head>
+
+<body>
+
+<div class="header" style="text-align: center;">
+	    <a href="index.html"><img class="" src="/images/logo.png" alt="img"></a>
+</div>
+
+<div class="clear"></div>
+
+<div class="container" data-bind="foreach: feedItems">
+	<div class="icon-column">
+    	<p>
+        	<img class="replace-2x" width="55" alt="img"
+            data-bind="attr: {src: url}">
+            <span data-bind="text: icon"></span>
+            <strong data-bind="text: name"></strong><br/>
+        	<span data-bind="text: shortSummary"></span>
+        </p>
+    </div>
+	<div class="decoration"></div>
+</div>
+<script type='text/javascript' src='scripts/jquery-2.1.1.min.js'></script>
+<script type='text/javascript' src='scripts/knockout-3.2.0.js'></script>
+<script>
+    var viewModelGenerator = function() {
+        var viewModel = this;
+        viewModel.nom =  "Nominate";
+        viewModel.prof =  "Profile";
+        viewModel.feedItems = ko.observableArray(); 
+    };
+    var viewModel = new viewModelGenerator();
+    ko.applyBindings(viewModel);
+
+    var sampleFeedItem = {
+            url: 'images/col1.png',
+            icon: 'I',
+            name: 'Joe Shmo',
+            shortSummary: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'
+        };
+    viewModel.feedItems.push(sampleFeedItem);
+    viewModel.feedItems.push(sampleFeedItem);
+    (function() {
+        // Hack to simulate data
+        window.setInterval(function() {
+            $.ajax('http://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    data: {
+                        timestamp: '0000000000'
+                    }
+                }).then(function(data) {
+                  // for item in data,
+                    //viewModel.feedItems.push(sampleFeedItem);
+                });
+        }, 10000);
+    })();
+</script>
+
+<div class="navigation">
+	<div class="navigation-wrapper">
+    <a href="index.html" class="navigation-item">
+    	<img class="selected replace-2x" width="9" src="images/nav/selected.png" alt="img">
+        <img src="images/nav/info.png" width="21" class="replace-2x" alt="img">
+    </a>
+    <a href="nominate.html" class="navigation-item">
+    	<img src="images/nav/message.png" width="21" class="replace-2x" alt="img">
+    </a>
+    <a href="portfolio.html" class="navigation-item">
+    	<img src="images/nav/portfolio.png" width="21" class="replace-2x" alt="img">
+    </a>
+    </div>
+</div>
+
+
+<div style="height:50px;"></div>
+
+</body>
+</html>

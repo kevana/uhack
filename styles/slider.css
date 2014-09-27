@@ -1,0 +1,78 @@
+
+/*This slider is very fragile and works on most if not all mobile devices */
+/* If you wish to edit anything inside it please contact me, it's best this way to make sure integrity remains*/
+
+
+/*Slider Heading*/
+
+.slider-heading{
+	margin-top:-5px;
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.slider-text{
+	font-size:11px;
+	color:#CCC;
+	padding-top:5px;
+	padding-bottom:20px;
+	line-height:20px;
+}
+
+
+.next-but-swipe{
+	padding-right:20px;
+	position:relative;
+	z-index:90;
+	float:right;
+	margin-top:-110px;
+	opacity:1;
+}
+
+.prev-but-swipe{
+	padding-left:20px;
+	position:relative;
+	z-index:90;
+	float:left;
+	margin-top:-110px;
+	opacity:1;
+}
+
+#slider{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+
+@media screen and (min-width: 400px){
+	.next-but-swipe{margin-top:-150px!important;}
+	.prev-but-swipe{margin-top:-150px!important;}
+}
+
+
+.swipe-img{
+	max-width:100%!important;
+	display:block!important;
+}
+
+
+.swipe li div, .swipe div div div {
+  	background:#000;
+  	font-weight:bold;
+  	color:#fff;
+  	font-size:20px;
+  	text-align:center;
+}
+
+.swipe-text{
+	color:#FFF!important;
+	position:relative;
+	padding-bottom:6px;
+	padding-top:6px;
+	z-index:9999;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top:-40px;
+	font-size:10px;
+	font-weight:400;
+}

@@ -1,0 +1,538 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>CeeVee - Mobile Template</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="Enabled">
+	<meta name="copyright" content="Enabled">
+	<meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+	<meta name="date" content="2012-07-13T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	
+	<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushXml.js"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#homepage">Homepage</a>
+				<ol>
+					<li><a href="#homepage_logo_section.">Logo section.</a>
+				</ol>
+			</li>
+			<li><a href="#template_structure">Template structure</a></li>
+			<li><a href="#about">About</a>
+				<ol>
+					<li><a href="#about_creating_icons.">Creating icons.</a>
+					<li><a href="#about_creating_buttons">Creating buttons</a>
+					<li><a href="#about_creating_notification_boxes.">Creating notification boxes.</a>
+					<li><a href="#about_creating_toggles_nbsp">Creating toggles&nbsp;</a>
+					<li><a href="#about_creating_lists">Creating lists</a>
+					<li><a href="#about_creating_columns">Creating columns</a>
+					<li><a href="#about_creating_full_width_text_or_a_container_with_a_full_width_title._nbsp_nbsp">Creating full width text or a container with a full width title.&nbsp; &nbsp;</a>
+				</ol>
+			</li>
+			<li><a href="#portfolio_structure">Portfolio structure</a></li>
+			<li><a href="#creating_image_slider">Creating image slider</a></li>
+			<li><a href="#faq">FAQ</a>
+				<ol>
+					<li><a href="#faq_how_do_i_install_the_template">How do I install the template?</a>
+				</ol>
+			</li>
+			<li><a href="#retina_graphics">Retina Graphics</a>
+				<ol>
+					<li><a href="#retina_graphics_how_do_i_make_a_graphic_inside_the_html_markup_be_retina_nbsp">How do I make a graphic inside the HTML markup be retina?&nbsp;</a>
+					<li><a href="#retina_graphics_how_do_i_make_a_graghic_inside_the_css_for_example_a_list_item_be_retina_nbsp">How do I make a graghic inside the CSS (for example a list item ) be retina? &nbsp;</a>
+				</ol>
+			</li>
+
+		</ol>
+		<div id="documenter_copyright">Copyright Enabled 2012<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v1.6</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1>CeeVee</h1><h2>Mobile Template</h2><hr><ul><li>Created: 07/03/2012</li><li>latest Update: 07/13/2012</li><li>By: Enabled</li><li><a href=""></a></li></ul></section><section id="homepage">
+	<h3>Homepage</h3><hr class="notop">
+<h4 id="homepage_logo_section.">Logo section.</h4>
+<p>
+	&nbsp;</p>
+<pre class="brush: html">
+&lt;div class=&quot;header&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+    &lt;a href=&quot;index.html&quot;&gt;&lt;img class=&quot;replace-2x&quot; src=&quot;images/logo.png&quot; width=&quot;44&quot;&gt;&lt;/a&gt;
+   <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;p&gt;CeeVee&lt;/p&gt;
+    &lt;em&gt;Amsterdam, Europe&lt;/em&gt;
+&lt;/div&gt;
+&lt;div class=&quot;logo-contact&quot;&gt;
+    &lt;a href=&quot;tel:+123 456 7890&quot; class=&quot;logo-contact-icon&quot;&gt;
+        &lt;img src=&quot;images/phone.png&quot; width=&quot;13&quot; alt=&quot;img&quot; class=&quot;replace-2x&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;sms:+123 456 7890&quot; class=&quot;logo-contact-icon&quot;&gt;
+        &lt;img src=&quot;images/mail.png&quot; width=&quot;13&quot; alt=&quot;img&quot; class=&quot;replace-2x&quot;&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</pre>
+<p>
+	To replace the logo simply replace the logo and &#108;&#111;&#103;&#111;&#64;&#50;&#120;&#46;&#112;&#110;&#103; files from the images folder.If your logo is bigger than the current one and the text lines seem to break, search for .logo in the .style.css file and expand it&#39;s total width.&nbsp;</p>
+<p>
+	Change the contact number and mobile number to make taping on that icon from a mobil device initiate a phone call or send a text message.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="template_structure">
+	<h3>Template structure</h3><hr class="notop">
+<p>
+	All other sub-elements must be added in a &lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</p>
+<p>
+	If you add a div class decoration inside the container class, it will be shorter on the left and right side by 10 pixels, if you add it outside the container, it will be full-width.&nbsp;</p>
+</section>
+<section id="about">
+	<h3>About</h3><hr class="notop">
+<h4 id="about_creating_icons.">Creating icons.</h4>
+<pre class="brush: html">
+        &lt;span class=&quot;icon demo android&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo addressbook&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo alert2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo alert3&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo android&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo arrow-down&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo arrow-left&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo arrow-right&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo arrow-up&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo bberry&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo bluetooth&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cameras&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cart&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo chalendar&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo chart&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo clip&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo clocks&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cloud-down&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cloud-up&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cog1&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo cog2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo columns&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo comment&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo delicious&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo digg&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo documents&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo download&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo dribble&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo dropbox&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo facebook&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo female&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo film-strip&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo fullscreen&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo go-full&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo go-normal&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo graph&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo headset&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo highdef&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo highdef2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo home&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo href&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo imac&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo img&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo img2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo ipad&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo iphone&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo ipodc&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo ipodn&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo laptop&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo linux&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo list&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo list-image&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo lists&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo location&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo lowdef&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo lowdef2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo magnifier&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo mail&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo male&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo mic&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo mobile&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo money&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo mouse&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo myspace&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo osx&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo paypal&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo pdf-doc&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo pdf-docs&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo phone&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo price&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo refresh&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo refresh2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo settings&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo shuffle&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo sign&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo skype&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo speach&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo speach2&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo stumble&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo tags&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo tumblr&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo twitter&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo upload&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo user&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo users&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo vimeo&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo volume&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo wifi&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo win&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo wp&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo youtube&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo zip&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon demo zips&quot;&gt;&lt;/span&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	Use the spans to generate icons!&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h4 id="about_creating_buttons">Creating buttons</h4>
+<p>
+	&nbsp;</p>
+<pre class="brush: html">
+&lt;div class=&quot;container last-item-bottom&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button grey&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button yellow&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button green&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button black&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button red&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button blue&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button gblue&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button purple&quot;&gt;Button&lt;/a&gt;
+&lt;/div&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	Using the above classes will generate a button. The class represents the color of the button. The text will expand the button without breaking it.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<h4 id="about_creating_notification_boxes.">Creating notification boxes.</h4>
+<div>
+	<pre class="brush: html">
+&lt;div class=&quot;notification-box-green&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;notification-quit-green&quot;&gt;x&lt;/a&gt;
+    &lt;img class=&quot;notification-icon replace-2x&quot; width=&quot;16&quot; src=&quot;images/lists/add.png&quot;&gt;
+    &lt;p class=&quot;notification-text&quot;&gt;Yes, green is good!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;notification-box-yellow&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;notification-quit-yellow&quot;&gt;x&lt;/a&gt;
+    &lt;img class=&quot;notification-icon replace-2x&quot; width=&quot;16&quot; src=&quot;images/lists/warning.png&quot;&gt;
+    &lt;p class=&quot;notification-text&quot;&gt;Something requires attention!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;notification-box-blue&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;notification-quit-blue&quot;&gt;x&lt;/a&gt;
+    &lt;img class=&quot;notification-icon replace-2x&quot; width=&quot;16&quot; src=&quot;images/lists/info.png&quot;&gt;
+    &lt;p class=&quot;notification-text&quot;&gt;Something interesting!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;notification-box-red last-item-bottom&quot;&gt;
+     &lt;a href=&quot;#&quot; class=&quot;notification-quit-red&quot;&gt;x&lt;/a&gt;
+     &lt;img class=&quot;notification-icon replace-2x&quot; width=&quot;16&quot; src=&quot;images/lists/close.png&quot;&gt;
+     &lt;p class=&quot;notification-text&quot;&gt;Attention! Bad things here!&lt;/p&gt;
+&lt;/div&gt;</pre>
+</div>
+<div>
+	First code syntax creates a green notification box.</div>
+<div>
+	Second code syntax generates a yellow notification box.<br>
+	Third code syntax generates a blue notification box.</div>
+<div>
+	Fourth notificiaton box generates a red notification box.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<h4 id="about_creating_toggles_nbsp">Creating toggles&nbsp;</h4>
+<div>
+	<pre class="brush: html">
+&lt;div class=&quot;toggle-container&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;toggle-plus&quot;&gt;Click here to expand the toggle!&lt;/a&gt;
+    &lt;div class=&quot;toggle-content&quot;&gt;
+        &lt;p&gt;
+            Text
+        &lt;/p&gt;
+     &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;toggle-container last-item-bottom&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;toggle-arrow&quot;&gt;Click here to expand the toggle!&lt;/a&gt;
+        &lt;div class=&quot;toggle-content&quot;&gt;
+            &lt;p&gt;
+                   Text 
+            &lt;/p&gt;
+        &lt;/div&gt;
+&lt;/div&gt;</pre>
+	<div>
+		First code syntax creates a plus style toggle box, the second one creates an arrow sytle toggle box.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="about_creating_lists">Creating lists</h4>
+	<div>
+		<pre class="brush: html">
+&lt;ul class=&quot;icon-lists&quot;&gt;
+    &lt;li class=&quot;list-add&quot;&gt;Add List&lt;/li&gt;
+    &lt;li class=&quot;list-chart&quot;&gt;Chart List&lt;/li&gt;
+    &lt;li class=&quot;list-chartflip&quot;&gt;Chart Flipped List&lt;/li&gt;
+    &lt;li class=&quot;list-close&quot;&gt;Close List&lt;/li&gt;
+    &lt;li class=&quot;list-down&quot;&gt;Down List&lt;/li&gt;
+    &lt;li class=&quot;list-error&quot;&gt;Error List&lt;/li&gt;
+    &lt;li class=&quot;list-heart&quot;&gt;Heart List&lt;/li&gt;
+    &lt;li class=&quot;list-info&quot;&gt;Information List&lt;/li&gt;
+    &lt;li class=&quot;list-left&quot;&gt;Left List&lt;/li&gt;
+    &lt;li class=&quot;list-page&quot;&gt;Page List&lt;/li&gt;
+    &lt;li class=&quot;list-right&quot;&gt;Right List&lt;/li&gt;
+    &lt;li class=&quot;list-rss&quot;&gt;RSS List&lt;/li&gt;
+    &lt;li class=&quot;list-search&quot;&gt;Search List&lt;/li&gt;
+    &lt;li class=&quot;list-staroff&quot;&gt;Star Off List&lt;/li&gt;
+    &lt;li class=&quot;list-staron&quot;&gt;Star On List&lt;/li&gt;
+    &lt;li class=&quot;list-twitter&quot;&gt;Twitter List&lt;/li&gt;
+    &lt;li class=&quot;list-facebook&quot;&gt;Facebook List&lt;/li&gt;
+    &lt;li class=&quot;list-up&quot;&gt;Up List&lt;/li&gt;
+    &lt;li class=&quot;list-warning&quot;&gt;Warning List&lt;/li&gt;
+    &lt;li class=&quot;list-add&quot;&gt;Add List&lt;/li&gt;
+&lt;/ul&gt;</pre>
+		<h4 id="about_creating_columns">Creating columns</h4>
+		<div>
+			&nbsp;</div>
+		<div>
+			<pre class="brush: html">
+&lt;p class=&quot;two-column&quot;&gt;
+    Column One
+&lt;/p&gt;
+
+&lt;p class=&quot;two-column last-item&quot;&gt;
+    Column Two
+&lt;/p&gt;
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+
+
+</pre>
+			<div>
+				<pre class="brush: html">
+
+
+&lt;p class=&quot;three-column&quot;&gt;
+   Column One
+&lt;/p&gt;
+&lt;p class=&quot;three-column&quot;&gt;
+   Column Two
+&lt;/p&gt;
+&lt;p class=&quot;three-column last-item&quot;&gt;
+   Column Three
+&lt;/p&gt;
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</pre>
+			</div>
+			<h4 id="about_creating_full_width_text_or_a_container_with_a_full_width_title._nbsp_nbsp">Creating full width text or a container with a full width title.&nbsp; &nbsp;</h4>
+			<div>
+				<pre class="brush: html">
+&lt;div class=&quot;container&quot;&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;h3 class=&quot;container-title&quot;&gt;Let&#39;s see the features, shall we?&lt;/h3&gt;
+    <span class="Apple-tab-span" style="white-space:pre"> </span>&lt;p class=&quot;full-width&quot;&gt;Packed and all sorts of awesome awesome stuff!&lt;/p&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+	</div>
+	<div>
+		&nbsp;</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="portfolio_structure">
+	<h3>Portfolio structure</h3><hr class="notop">
+<p class="brush: html">
+	&nbsp;</p>
+<p class="brush: html">
+	&nbsp;</p>
+<pre class="brush: html">
+
+    &lt;ul id=&quot;gallery&quot; class=&quot;gallery&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/swype/full/001.jpg&quot;&gt;
+                &lt;img src=&quot;images/swype/thumb/001.png&quot; alt=&quot;Caption Title One&quot; /&gt;
+            &lt;/a&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+             &lt;a href=&quot;images/swype/full/002.jpg&quot;&gt;
+                 &lt;img src=&quot;images/swype/thumb/002.png&quot; alt=&quot;Caption Title Two&quot; /&gt;
+             &lt;/a&gt;
+          &lt;/li&gt;
+    &lt;/ul&gt;</pre>
+<p class="brush: html">
+	Copy paste a list syntax to add a new image!&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="creating_image_slider">
+	<h3>Creating image slider</h3><hr class="notop">
+<p>
+	&nbsp;</p>
+<pre class="brush: html">
+&lt;div id=&quot;slider&quot; class=&quot;swipe&quot;&gt;
+    &lt;ul&gt;
+        &lt;li style=&#39;display:block&#39;&gt;
+        &lt;div&gt;
+            &lt;img class=&quot;swipe-img&quot; src=&quot;images/slider/3.jpg&quot; alt=&quot;img&quot;&gt;
+            &lt;p class=&quot;swipe-text&quot;&gt;Swipe me from your mobile!&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li style=&#39;display:none&#39;&gt;
+        &lt;div&gt;
+            &lt;img class=&quot;swipe-img&quot; src=&quot;images/slider/2.jpg&quot; alt=&quot;img&quot;&gt;
+            &lt;p class=&quot;swipe-text&quot;&gt;Come on! Swipe me!&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;/li&gt;
+&lt;/div&gt;</pre>
+<p>
+	Copy paste the above syntax, then duplicate the display:none list. Leave the first list with display block! It&#39;s important to keep the slider working on Android devices as well.&nbsp;</p>
+</section>
+<section id="faq">
+	<h3>FAQ</h3><hr class="notop">
+<h4 id="faq_how_do_i_install_the_template">How do I install the template?</h4>
+<p>
+	Copy paste the following files to your server</p>
+<div>
+	<strong>images</strong></div>
+<div>
+	<strong>php</strong></div>
+<div>
+	<strong>scripts</strong></div>
+<div>
+	<strong>style</strong></div>
+<div>
+	about.html</div>
+<div>
+	contact.html</div>
+<div>
+	portfolio.html</div>
+<div>
+	index.html</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>How do I customize the contact form?</strong></div>
+<div>
+	There is only one php file in the entire file. Find it, and replace my mail address with yours. If you can&#39;t find it, then purchase the file, it means you stole it! Nifty security trick huh?</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>How do I automatically redirect users to my mobile page?</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	After purchasing send me a message through my profile and I will gladly assist you. Remember to message me through my profile and have a little patience, I reply to my messages within 72 hours depending on my support time, demand, weekend, family issues, etc! But I do reply to each and everyone!&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="retina_graphics">
+	<h3>Retina Graphics</h3><hr class="notop">
+<p>
+	&nbsp;</p>
+<h4 id="retina_graphics_how_do_i_make_a_graphic_inside_the_html_markup_be_retina_nbsp">How do I make a graphic inside the HTML markup be retina?&nbsp;</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	Images inside HTML can be made retina with 2 very simple yet very important step. First of all, your image must have a class called &quot;replace-2x&quot; added to it and MANDATORY the width of the image inside the img tag.&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	The following syntax for example</p>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	<div class="syntaxhighlighter  html" id="highlighter_577531" style="margin: 9px 0px !important; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; background-color: rgb(254, 254, 254) !important; overflow: auto !important; ">
+		<table border="0" cellpadding="0" cellspacing="0" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; min-width: 900px !important; width: 1657px; border-collapse: collapse; ">
+			<tbody style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+				<tr style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+					<td class="gutter" style="margin: 0px; padding: 3px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; color: rgb(120, 120, 120) !important; width: 44px; ">
+						<div class="line number1 index0 alt2" style="margin: 0px; padding: 0px; border-top-width: 0px; border-right-width: 3px !important; border-bottom-width: 0px; border-left-width: 0px; border-right-style: solid !important; border-right-color: rgb(254, 254, 254) !important; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; overflow: hidden; height: 18px !important; ">
+							1</div>
+					</td>
+					<td class="code" style="margin: 0px; padding: 3px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; width: 1601px; ">
+						<div class="container" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+							<div class="line number1 index0 alt2" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; overflow: hidden; height: 18px !important; ">
+								<code class="html plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">&lt;</code><code class="html keyword" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold !important; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(127, 0, 85) !important; ">img</code>&nbsp;<code class="html color1" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: gray !important; ">src</code><code class="html plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">=</code><code class="html string" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(42, 0, 255) !important; ">&quot;img1.png&quot;</code>&nbsp;<code class="html color1" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: gray !important; ">class</code><code class="html plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">=</code><code class="html string" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(42, 0, 255) !important; ">&quot;replace-2x other-classes&quot;</code>&nbsp;<code class="html color1" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: gray !important; ">width</code><code class="html plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">=</code><code class="html string" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(42, 0, 255) !important; ">&quot;20&quot;</code><code class="html plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">&gt;</code></div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	In the above example, I used an image that is 20 pixels size. Now, create a image, that is at least 40 pixels wide. Once that is complete, save it in the exact same place as the previous image, but name it &#105;&#109;&#103;&#49;&#64;&#50;&#120;&#46;&#112;&#110;&#103;.</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	JavaScript will automatically detect the image if the dpi is doubled and replace img1.png with &#105;&#109;&#103;&#49;&#64;&#50;&#120;&#46;&#112;&#110;&#103;. It is important you have the width defined for it, because, if you don&#39;t, the image will be 40pixels, and it will mess up the design.</p>
+<h4 id="retina_graphics_how_do_i_make_a_graghic_inside_the_css_for_example_a_list_item_be_retina_nbsp">How do I make a graghic inside the CSS (for example a list item ) be retina? &nbsp;</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	There is a css called&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">highdpi.css.&nbsp;</strong>&nbsp;Do not add anything in here that is not HD. You will understand as we proceed.&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	Inside style.css, create a new list item for example.&nbsp;</p>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	<div class="syntaxhighlighter  css" id="highlighter_767559" style="margin: 9px 0px !important; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; background-color: rgb(254, 254, 254) !important; overflow: auto !important; ">
+		<table border="0" cellpadding="0" cellspacing="0" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; min-width: 900px !important; width: 1657px; border-collapse: collapse; ">
+			<tbody style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+				<tr style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+					<td class="gutter" style="margin: 0px; padding: 3px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; color: rgb(120, 120, 120) !important; width: 44px; ">
+						<div class="line number1 index0 alt2" style="margin: 0px; padding: 0px; border-top-width: 0px; border-right-width: 3px !important; border-bottom-width: 0px; border-left-width: 0px; border-right-style: solid !important; border-right-color: rgb(254, 254, 254) !important; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; overflow: hidden; height: 18px !important; ">
+							1</div>
+					</td>
+					<td class="code" style="margin: 0px; padding: 3px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; width: 1601px; ">
+						<div class="container" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; ">
+							<div class="line number1 index0 alt2" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; overflow: hidden; height: 18px !important; ">
+								<code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">li.whatever{</code><code class="css keyword" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold !important; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(127, 0, 85) !important; ">background-image</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">:</code><code class="css value" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(0, 153, 0) !important; ">url</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">(../images/img</code><code class="css value" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(0, 153, 0) !important; ">1</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">.png);&nbsp;</code><code class="css keyword" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold !important; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(127, 0, 85) !important; ">width</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">:</code><code class="css value" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(0, 153, 0) !important; ">20px</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">;&nbsp;</code><code class="css keyword" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold !important; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(127, 0, 85) !important; ">height</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">:</code><code class="css value" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: rgb(0, 153, 0) !important; ">20px</code><code class="css plain" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-size: 12px; font-family: 'Courier New', Courier, monospace; vertical-align: baseline; color: black !important; ">;}</code></div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	Once you have done this, the same as for the markup, create a double sized image, call it &#105;&#109;&#103;&#49;&#64;&#50;&#120;&#46;&#112;&#110;&#103; and save it in the same location.</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); -webkit-text-size-adjust: none; ">
+	Then, inside the highdpi.css file, inside the main css class, add the following</p>
+</section>
+
+	</div>
+</body>
+</html>
