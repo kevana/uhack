@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 
 
-<title>CeeVee | Mobile Template</title>
+<title>Kudos | Nominate</title>
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 <link href="styles/buttons.css" rel="stylesheet" type="text/css">
 <link href="styles/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" />
@@ -36,8 +36,8 @@
 <div class="decoration first-decoration"></div>
 
 <div class="container">
-    <h3 class="container-title">A fully working contact form!!</h3>
-    <p class="container-text">Works with AJAX and PHP, doesn't refresh the page and it's mighty easy to edit! Just one file just one address, and you're ready to go!!</p>
+    <h3 class="container-title">Nomination Form</h3>
+    <p class="container-text">Want to nominate someone for an award? Then please fill the form below</p>
 </div>
 <div class="decoration"></div>
 <div class="container">
@@ -50,7 +50,16 @@
               <label for="contactEmail" id="email_label">Email (required)</label>
               <input type="text" name="contactEmail" id="contactEmail" size="30" value="" class="text-input" />
               <span class="error" id="emailError">Please enter your email address !</span> <span class="error" id="emailError2">Please enter a valid email address !</span>
-              <label for="contactMessage" id="message_label">Message</label>
+<label for="contactEmail" id="email_label">Award</label>
+<form action="">
+<select name="cars">
+<option value="leadership">Leadership Award</option>
+<option value="Hackathon">Hackathon Award</option>
+<option value="Academic">Academic Excellence Award</option>
+<option value="Volunteer">Volunteer Award</option>
+</select>
+</form>
+              <label for="contactMessage" id="message_label">Nomination Message</label>
               <textarea  name="contactMessage" id="contactMessage" class="text-input"></textarea>
               <span class="error" id="messageError">Please enter message !</span>
               <p class="contact-button-house">
