@@ -1,130 +1,15 @@
 <!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<link rel="apple-touch-icon" sizes="114x114" href="images/splash/splash-icon.png"> 
-<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
-<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-
-
-<title>Kudos Feed</title>
-<link href="styles/style.css" rel="stylesheet" type="text/css">
-<link href="styles/buttons.css" rel="stylesheet" type="text/css">
-<link href="styles/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" />
-<link href="styles/slider.css" rel="stylesheet" type="text/css">
-<link href="styles/photoswipe.css" rel="stylesheet" type="text/css">
-
-<script src="scripts/jquery.js"></script>
-<script src="scripts/contact.js"></script>
-<script src="scripts/swipe.js"></script>
-<script src="scripts/klass.min.js"></script>
-<script src="scripts/photoswipe.js"></script>
-<script src="scripts/retina.js"></script>
-<script src="scripts/custom.js"></script>
-
 </head>
-
 <body>
-
-<div class="header" style="text-align: center;">
-        <a href="index.html"><img class="" src="http://placehold.it/200x100" alt="img"></a>
-</div>
-
-<div class="clear"></div>
-
-<!-- Insert Nomination body here -->
-<div class="nom-body">
-    <div class="row">
-        <div class="avatar-img" style="width: 50%">
-            <img data-bind="attr: {src: avatarUrl}"/>
-        </div>
-        <div class="info" style="width: 50%">
-            <!-- TODO: Fill in area-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="original-nomination">
-            <h1 data-bind="text: origNomTitle"></h1>
-            <p data-bind="text: origNomText"></p>
-        </div>
-    </div>
-    <div class="supporting-nominations" data-bind="foreach: supNoms">
-        <div class="sup-nom">
-            <span data-bind="text: votes"></span> <span data-bind="text: text"></span>
-        </div>
-    </div>
-</div>
 <style>
-    div { border: 1px solid black;}
-    .avatar-img, .info {
-        width: 50%;
-    }
-    .original-nomination, .row, .sup-nom {
-        width: 100%;
-    }
+	img {
+		width:100%;
+		height:100%;
+	}
 </style>
-<script type='text/javascript' src='scripts/jquery-2.1.1.min.js'></script>
-<script type='text/javascript' src='scripts/knockout-3.2.0.js'></script>
-<script>
-    var viewModelGenerator = function() {
-        var viewModel = this;
-        viewModel.avatarUrl =  "http://placekitten.com/g/200/200";
-        viewModel.origNomTitle =  "title";
-        viewModel.origNomText =  "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor";
-        viewModel.supNoms = ko.observableArray(); 
-    };
-    var viewModel = new viewModelGenerator();
-    ko.applyBindings(viewModel);
-
-    var samplesupNomItem = {
-            url: 'images/col1.png',
-            icon: 'I',
-            votes: 25,
-            name: 'Joe Shmo',
-            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'
-        };
-    viewModel.supNoms.push(samplesupNomItem);
-    viewModel.supNoms.push(samplesupNomItem);
-    (function() {
-        // Hack to simulate data
-        window.setInterval(function() {
-            $.ajax('http://jsonplaceholder.typicode.com/posts', {
-                    method: 'POST',
-                    data: {
-                        timestamp: '0000000000'
-                    }
-                }).then(function(data) {
-                  // for item in data,
-                    //viewModel.supNoms.push(samplesupNomItem);
-                });
-        }, 10000);
-    })();
-</script>
-<div class="bottom-button navigation-wrapper">
-        <a href="#">Write your own</a>
-</div>
-<style>
-    .bottom-button {
-        bottom: 40px;
-        text-align:center;
-    }
-</style>
-<div class="navigation">
-    <div class="navigation-wrapper">
-    <a href="index.html" class="navigation-item">
-        <img src="images/nav/info.png" width="21" class="replace-2x" alt="img">
-    </a>
-    <a href="nominate.html" class="navigation-item">
-        <img class="selected replace-2x" width="9" src="images/nav/selected.png" alt="img">
-        <img src="images/nav/message.png" width="21" class="replace-2x" alt="img">
-    </a>
-    <a href="portfolio.html" class="navigation-item">
-        <img src="images/nav/portfolio.png" width="21" class="replace-2x" alt="img">
-    </a>
-    </div>
-</div>
-
+<img src="images/mocks/Nomination_Page.png">
 </body>
 </html>
