@@ -42,7 +42,7 @@
                 data-bind="attr: {src: user.user_pic_url}">
         </div>
         <div class="nom-desc">
-            <p data-bind="text: nomination_description_short"></p>
+            <p data-bind="text: nomination_description_long"></p>
         </div>
         <div class="badge-img">
             <img class="badge-img" width="50" alt="img"
@@ -111,8 +111,6 @@
         }];
     var viewModelGenerator = function() {
         var viewModel = this;
-        viewModel.nom =  "Nominate";
-        viewModel.prof =  "Profile";
         viewModel.feedItems = ko.observableArray(feedies); 
     };
     var viewModel = new viewModelGenerator();
@@ -122,23 +120,7 @@
     (function() {
         // Hack to simulate data
         window.setInterval(function() {
-            var last_timestamp = null;
-            if (viewModel.feedItems && viewModel.feedItems()) {
-                last_timestamp = viewModel.feedItems()[0].timestamp;
-            }
-            /*
-            $.ajax('http://jsonplaceholder.typicode.com/posts', {
-                    method: 'POST',
-                    data: {
-                        timestamp: 'last_timestamp'
-                    }
-                }).then(function(data) {
-                  // for item in data,
-                    //viewModel.feedItems.unshift(item);
-                });
-            */
             //viewModel.feedItems.unshift(viewModel.feedItems()[0]);
-
             getFeed()
         }, 5000);
     })();
