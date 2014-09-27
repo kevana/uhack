@@ -1,3 +1,4 @@
+/*
 function highdpi_init() {
 	if(jQuery('.replace-2x').css('font-size') == "1px") {
 		var els = jQuery(".replace-2x").get();
@@ -11,3 +12,4 @@ function highdpi_init() {
 jQuery(document).ready(function() {
 	highdpi_init();
 });
+*/

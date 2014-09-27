@@ -209,6 +209,35 @@ body{
 	padding-top: 10px;
 }
 
+.img-badge {
+	float: right !important;
+}
+
+div.avatar-img {
+	width: 20%;
+	float: left;
+}
+
+div.badge-img {
+	width: 20%;
+	float: right;
+}
+
+img.avatar-img {
+	padding-right: 10px;
+}
+
+img.badge-img {
+	padding-left: 10px;
+}
+
+
+div.nom-desc {
+	width: 60%;
+	float:left;
+	line-height: 35px;
+}
+
 /*Lists and Icons*/
 
 .addressbook{		background-image:url(../images/icons/addressbook.png);	background-position:0px 0px;}

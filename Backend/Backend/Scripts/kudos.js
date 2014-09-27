@@ -83,11 +83,18 @@ function getFeed() {
         contentType: 'application/json; charset=utf-8',
         dataType: "json",
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+            //alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
             returnValue = false;
+            viewModel.feedItems.unshift(viewModel.feedItems()[0]);
         },
         success: function (data) {
-            $("#output").append("<p>" + data.d + "</p>");
+            // if data is single dict
+                //viewModel.feedItems.unshift(data);
+            // if data is array
+                // for each
+                    //viewModel.feedItems.unshift(data);
+            viewModel.feedItems.unshift(data);
+            console.log('getFeed success');
         }
     });
 
@@ -104,7 +111,7 @@ function getFeedPast() {
     var ind = time.lastIndexOf("-");
     time = time.substr(0, ind);
 
-    alert(time);
+    //alert(time);
 
 
     var dataVal = JSON.stringify({
@@ -118,7 +125,7 @@ function getFeedPast() {
         contentType: 'application/json; charset=utf-8',
         dataType: "json",
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+            //alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
             returnValue = false;
         },
         success: function (data) {

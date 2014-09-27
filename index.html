@@ -35,50 +35,112 @@
 <div class="clear"></div>
 
 <div class="container" data-bind="foreach: feedItems">
-	<div class="icon-column">
-    	<p>
-        	<img class="replace-2x" width="55" alt="img"
-            data-bind="attr: {src: url}">
-            <span data-bind="text: icon"></span>
-            <strong data-bind="text: name"></strong><br/>
-        	<span data-bind="text: shortSummary"></span>
-        </p>
+	<div class="icon-column" onclick="gotoMock" ontouchstart="gotoMock">
+        <pre style="display:none" data-bind="text: console.log($data)"></pre>
+        <div class="avatar-img">
+            <img class="avatar-img" width="50" alt="img"
+                data-bind="attr: {src: user.user_pic_url}">
+        </div>
+        <div class="nom-desc">
+            <p data-bind="text: nomination_description_short"></p>
+        </div>
+        <div class="badge-img">
+            <img class="badge-img" width="50" alt="img"
+                data-bind="attr: {src: badge.badge_url}">
+        </div>
     </div>
+    <div class="clear"></div>
 	<div class="decoration"></div>
 </div>
 <script type='text/javascript' src='scripts/jquery-2.1.1.min.js'></script>
 <script type='text/javascript' src='scripts/knockout-3.2.0.js'></script>
+<script type='text/javascript' src='Backend/Backend/Scripts/moment.js'></script>
+<script type='text/javascript' src='Backend/Backend/Scripts/kudos.js'></script>
 <script>
+    function gotoMock() {
+        console.log('WORKING');
+        window.location.replace('//www.dropbox.com/s/u0v3nua76p31m20/Nomination_Page.png');
+    }
+
+    var feedies = [{
+            "nomination_id": 2,
+            "user": {
+                "user_id": 2,
+                "user_first_name": "Bryan",
+                "user_last_name": "Stadick",
+                "user_name": "Bryan Stadick",
+                "email": "Bryan@kudos.com",
+                "user_pic_url": "http://www.finmap-fp7.eu/no_pic.png"
+            },
+            "badge": {
+                "badge_id": "abcd123456789",
+                "badge_name": "Debugging Badge",
+                "badge_description": "Awarded for debugging your code",
+                "badge_url": "http://waynesword.palomar.edu/images/rainbe1b.jpg"
+            },
+            "organization_id": "123456789abcd",
+            "nomination_description_short": "Bryan came, saw, and debugged.",
+            "nomination_description_long": "This description is slightly longer than the previous description.",
+            "ratings": [],
+            "vote_count": 0,
+            "req_vote_count": 50,
+            "timestamp": "9/27/2014 2:35:26 PM"
+        }, {
+            "nomination_id": 3,
+            "user": {
+                "user_id": 3,
+                "user_first_name": "Bryan",
+                "user_last_name": "Stadick",
+                "user_name": "Bryan Stadick",
+                "email": "Bryan@kudos.com",
+                "user_pic_url": "http://www.finmap-fp7.eu/no_pic.png"
+            },
+            "badge": {
+                "badge_id": "abcd123456789",
+                "badge_name": "Debugging Badge",
+                "badge_description": "Awarded for debugging your code",
+                "badge_url": "http://waynesword.palomar.edu/images/rainbe1b.jpg"
+            },
+            "organization_id": "123456789abcd",
+            "nomination_description_short": "Bryan came, saw, and debugged.",
+            "nomination_description_long": "This description is slightly longer than the previous description.",
+            "ratings": [],
+            "vote_count": 0,
+            "req_vote_count": 50,
+            "timestamp": "9/27/2014 2:35:28 PM"
+        }];
     var viewModelGenerator = function() {
         var viewModel = this;
         viewModel.nom =  "Nominate";
         viewModel.prof =  "Profile";
-        viewModel.feedItems = ko.observableArray(); 
+        viewModel.feedItems = ko.observableArray(feedies); 
     };
     var viewModel = new viewModelGenerator();
     ko.applyBindings(viewModel);
+    getFeedPast();
 
-    var sampleFeedItem = {
-            url: 'images/col1.png',
-            icon: 'I',
-            name: 'Joe Shmo',
-            shortSummary: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.'
-        };
-    viewModel.feedItems.push(sampleFeedItem);
-    viewModel.feedItems.push(sampleFeedItem);
     (function() {
         // Hack to simulate data
         window.setInterval(function() {
+            var last_timestamp = null;
+            if (viewModel.feedItems && viewModel.feedItems()) {
+                last_timestamp = viewModel.feedItems()[0].timestamp;
+            }
+            /*
             $.ajax('http://jsonplaceholder.typicode.com/posts', {
                     method: 'POST',
                     data: {
-                        timestamp: '0000000000'
+                        timestamp: 'last_timestamp'
                     }
                 }).then(function(data) {
                   // for item in data,
-                    //viewModel.feedItems.push(sampleFeedItem);
+                    //viewModel.feedItems.unshift(item);
                 });
-        }, 10000);
+            */
+            //viewModel.feedItems.unshift(viewModel.feedItems()[0]);
+
+            getFeed()
+        }, 5000);
     })();
 </script>
 
