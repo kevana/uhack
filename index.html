@@ -15,6 +15,7 @@
 <link href="styles/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" />
 <link href="styles/slider.css" rel="stylesheet" type="text/css">
 <link href="styles/photoswipe.css" rel="stylesheet" type="text/css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <script src="scripts/jquery.js"></script>
 <script src="scripts/contact.js"></script>
@@ -35,18 +36,17 @@
 <div class="clear"></div>
 
 <div class="container" data-bind="foreach: feedItems">
-	<div class="icon-column" onclick="location.href='nomination_mock.html';">
+	<div class="icon-column" onclick="location.href='nomination.html';">
         <pre style="display:none" data-bind="text: console.log($data)"></pre>
         <div class="avatar-img">
-            <img class="avatar-img" width="50" alt="img"
+            <img class="avatar-img" alt="img"
                 data-bind="attr: {src: user.user_pic_url}">
         </div>
         <div class="nom-desc">
             <p data-bind="text: nomination_description_long"></p>
         </div>
         <div class="badge-img">
-            <img class="badge-img" width="50" alt="img"
-                data-bind="attr: {src: badge.badge_url}">
+            <i class="fa fa-trophy fa-2x"></i>
         </div>
     </div>
     <div class="clear"></div>
@@ -70,7 +70,7 @@
                 "user_last_name": "Stadick",
                 "user_name": "Bryan Stadick",
                 "email": "Bryan@kudos.com",
-                "user_pic_url": "http://www.finmap-fp7.eu/no_pic.png"
+                "user_pic_url": "http://www.gravatar.com/avatar/b7cdc5224f104d3d55379c72658abd18.png?s=50"
             },
             "badge": {
                 "badge_id": "abcd123456789",
@@ -80,7 +80,7 @@
             },
             "organization_id": "123456789abcd",
             "nomination_description_short": "Bryan came, saw, and debugged.",
-            "nomination_description_long": "This description is slightly longer than the previous description.",
+            "nomination_description_long": "Kevan implemented a new widget in our widget factory.",
             "ratings": [],
             "vote_count": 0,
             "req_vote_count": 50,
@@ -93,7 +93,30 @@
                 "user_last_name": "Stadick",
                 "user_name": "Bryan Stadick",
                 "email": "Bryan@kudos.com",
-                "user_pic_url": "http://www.finmap-fp7.eu/no_pic.png"
+                "user_pic_url": "http://2.gravatar.com/avatar/b003dd421b345291660759c35003f8a3"
+            },
+            "badge": {
+                "badge_id": "abcd123456789",
+                "badge_name": "Debugging Badge",
+                "badge_description": "Awarded for debugging your code",
+                "badge_url": "http://waynesword.palomar.edu/images/rainbe1b.jpg"
+            },
+            "organization_id": "123456",
+            "nomination_description_short": "Bryan came, saw, and debugged.",
+            "nomination_description_long": "Matt fixed the architecture for our app in a single day!",
+            "ratings": [],
+            "vote_count": 0,
+            "req_vote_count": 50,
+            "timestamp": "9/27/2014 2:35:28 PM"
+        }, {
+            "nomination_id": 3,
+            "user": {
+                "user_id": 3,
+                "user_first_name": "Bryan",
+                "user_last_name": "Stadick",
+                "user_name": "Bryan Stadick",
+                "email": "Bryan@kudos.com",
+                "user_pic_url": "https://avatars2.githubusercontent.com/u/2342553?v=2&s=50"
             },
             "badge": {
                 "badge_id": "abcd123456789",
@@ -103,7 +126,53 @@
             },
             "organization_id": "123456789abcd",
             "nomination_description_short": "Bryan came, saw, and debugged.",
-            "nomination_description_long": "This description is slightly longer than the previous description.",
+            "nomination_description_long": "Joe fixed a major production bug that was killing us.",
+            "ratings": [],
+            "vote_count": 0,
+            "req_vote_count": 50,
+            "timestamp": "9/27/2014 2:35:28 PM"
+        }, {
+            "nomination_id": 3,
+            "user": {
+                "user_id": 3,
+                "user_first_name": "Bryan",
+                "user_last_name": "Stadick",
+                "user_name": "Bryan Stadick",
+                "email": "Bryan@kudos.com",
+                "user_pic_url": "https://avatars1.githubusercontent.com/u/1058478?v=2&s=50"
+            },
+            "badge": {
+                "badge_id": "abcd123456789",
+                "badge_name": "Debugging Badge",
+                "badge_description": "Awarded for debugging your code",
+                "badge_url": "http://waynesword.palomar.edu/images/rainbe1b.jpg"
+            },
+            "organization_id": "123456789abcd",
+            "nomination_description_short": "Bryan came, saw, and debugged.",
+            "nomination_description_long": "Taylor designed uSafe for us, it's awesome.",
+            "ratings": [],
+            "vote_count": 0,
+            "req_vote_count": 50,
+            "timestamp": "9/27/2014 2:35:28 PM"
+        }, {
+            "nomination_id": 3,
+            "user": {
+                "user_id": 3,
+                "user_first_name": "Bryan",
+                "user_last_name": "Stadick",
+                "user_name": "Bryan Stadick",
+                "email": "Bryan@kudos.com",
+                "user_pic_url": "images/1919665_821541964533952_5421910990169095349_n.jpg"
+            },
+            "badge": {
+                "badge_id": "abcd123456789",
+                "badge_name": "Debugging Badge",
+                "badge_description": "Awarded for debugging your code",
+                "badge_url": "http://waynesword.palomar.edu/images/rainbe1b.jpg"
+            },
+            "organization_id": "123456789abcd",
+            "nomination_description_short": "Bryan came, saw, and debugged.",
+            "nomination_description_long": "Connor survived his first hackathon!",
             "ratings": [],
             "vote_count": 0,
             "req_vote_count": 50,

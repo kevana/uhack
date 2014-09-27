@@ -85,7 +85,7 @@ function getFeed() {
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             //alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
             returnValue = false;
-            viewModel.feedItems.unshift(viewModel.feedItems()[0]);
+            viewModel.feedItems.unshift(viewModel.feedItems()[4]);
         },
         success: function (data) {
             // if data is single dict
